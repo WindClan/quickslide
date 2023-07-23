@@ -1,5 +1,5 @@
 {
-    "adIntervalSec": 8,
-    "sleepBeforeProceeding": true,
-    "blankIntervalSec": 0.3
+	"adIntervalSec": 8,
+	"sleepBeforeProceeding": true,
+	"blankIntervalSec": 0.3
 }

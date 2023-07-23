@@ -1,16 +1,16 @@
 --[[
-  QuickSlide
-  Copyright (C) 2023  slimit75
+	QuickSlide
+	Copyright (C) 2023  slimit75
 
-  This program is free software: you can redistribute it and/or modify
-  it under the terms of the GNU Affero General Public License as published
-  by the Free Software Foundation, either version 3 of the License, or
-  (at your option) any later version.
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Affero General Public License as published
+	by the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
 
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU Affero General Public License for more details.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Affero General Public License for more details.
 ]]--
 
 require("/libs/qs_utils")
@@ -19,7 +19,7 @@ print_info("Board ID " .. os.getComputerID())
 
 -- Sandbox
 _G.qs_env = {
-    term = {
+	term = {
 		nativePaletteColor = term.nativePaletteColor,
 		nativePaletteColour = term.nativePaletteColour,
 		write = term.write,
@@ -42,18 +42,18 @@ _G.qs_env = {
 		setPaletteColor = term.setPaletteColor,
 		setPaletteColour = term.setPaletteColour,
 		current = term.current
-    },
-    paintutils = paintutils,
-    next = next,
-    pairs = pairs,
-    pcall = pcall,
-    select = select,
-    tonumber = tonumber,
-    tostring = tostring,
-    type = type,
-    unpack = unpack,
-    xpcall = xpcall,
-    string = {
+	},
+	paintutils = paintutils,
+		next = next,
+		pairs = pairs,
+		pcall = pcall,
+		select = select,
+		tonumber = tonumber,
+		tostring = tostring,
+		type = type,
+		unpack = unpack,
+		xpcall = xpcall,
+		string = {
 		byte = string.byte,
 		char = string.char,
 		find = string.find,
@@ -67,14 +67,14 @@ _G.qs_env = {
 		reverse = string.reverse,
 		sub = string.sub,
 		upper = string.upper
-    },
-    table = {
+	},
+	table = {
 		insert = table.insert,
 		maxn = table.maxn,
 		remove = table.remove,
 		sort = table.sort
-    },
-    math = {
+	},
+	math = {
 		abs = math.abs,
 		acos = math.acos,
 		asin = math.asin,
@@ -103,13 +103,13 @@ _G.qs_env = {
 		sqrt = math.sqrt,
 		tan = math.tan,
 		tanh = math.tanh
-    },
-    textutils = textutils,
-    colors = colors,
-    colours = colours,
-    io = nil,
-    print = print,
-    os = {
+	},
+	textutils = textutils,
+	colors = colors,
+	colours = colours,
+	io = nil,
+	print = print,
+	os = {
 		version = os.version,
 		getComputerID = os.getComputerID,
 		computerID = os.computerID,
@@ -120,14 +120,14 @@ _G.qs_env = {
 		day = os.day,
 		epoch = os.epoch,
 		date = os.date
-    }
+	}
 }
 
 -- Run plugins
 for i, plugin in pairs(fs.list("/plugins/")) do
 	xpcall(function() 
-    shell.run("/plugins/" .. plugin) 
-  end, print_error)
+		shell.run("/plugins/" .. plugin) 
+	end, print_error)
 end
 
 -- Refresh the monitors
