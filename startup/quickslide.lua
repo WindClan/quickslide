@@ -1,7 +1,12 @@
+local remote = "https://raw.githubusercontent.com/throughthefog/quickslide-ads/main/"
+
 require("/libs/qs_utils")
 print_info("Starting QuickSlide")
 print_info("Board ID " .. os.getComputerID())
-
+if fs.exists("/temp") then
+	fs.delete("/temp")
+end
+fs.makeDir("/temp")
 -- Sandbox
 _G.qs_env = {
 	term = {
@@ -125,9 +130,12 @@ for i, monitor in pairs(monitors) do
 end
 
 -- Refresh images list
+local json1 = http.get(remote.."list.json?a="..os.time("utc"))
+local json = textutils.unserialiseJSON(json1.readAll())
+json1.close()
 local images = {}
-for i, image in pairs(fs.list("/images/")) do
-	local file = fs.open("/images/" .. image, "r")
+for i, image in pairs(json) do
+	local file = http.get(remote..image.."?a="..os.time("utc"))
 	table.insert(images, file.readAll())
 	file.close()
 end
