@@ -1,5 +1,3 @@
-local remote = "https://raw.githubusercontent.com/windclan/quickslide-ads/main/"
-
 require("/libs/qs_utils")
 print_info("Starting QuickSlide")
 print_info("Board ID " .. os.getComputerID())
@@ -132,6 +130,7 @@ for i, monitor in pairs(monitors) do
 end
 
 -- Refresh images list
+local remote = conf.remote
 local json1 = http.get(remote.."list.json?a="..os.time("utc"))
 local json = textutils.unserialiseJSON(json1.readAll())
 json1.close()

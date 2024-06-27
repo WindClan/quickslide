@@ -1,5 +1,6 @@
 {
 	"adIntervalSec": 8,
 	"sleepBeforeProceeding": true,
-	"blankIntervalSec": 0.3
+	"blankIntervalSec": 0.3,
+	"remote": "https://raw.githubusercontent.com/windclan/quickslide-ads/main/"
 }
