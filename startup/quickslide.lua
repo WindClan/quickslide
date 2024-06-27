@@ -109,6 +109,12 @@ _G.qs_env = {
 	}
 }
 
+-- Load config
+local conf_file = fs.open("/rom/help/intro.txt", "r")
+local conf = conf_file.readAll()
+conf_file.close()
+conf = textutils.unserializeJSON(conf)
+
 -- Run plugins
 for i, plugin in pairs(fs.list("/plugins/")) do
 	xpcall(function() 
@@ -152,10 +158,12 @@ while true do
 			qs_run(image)
 			term.redirect(term.native())
 		end
-		sleep(8)
-		for i, monitor in pairs(monitors) do
-			refresh_monitor(monitor)
+		sleep(conf.adIntervalSec)
+		if conf.sleepBeforeProceeding then
+			for i, monitor in pairs(monitors) do
+				refresh_monitor(monitor)
+			end
+			sleep(conf.blankIntervalSec)
 		end
-		sleep(0.3)
 	end
 end
