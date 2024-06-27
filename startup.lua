@@ -108,7 +108,7 @@ _G.qs_env = {
 }
 
 -- Load config
-local conf_file = fs.open("/rom/help/intro.txt", "r")
+local conf_file = fs.open("/config/quickslide.json", "r")
 local conf = conf_file.readAll()
 conf_file.close()
 conf = textutils.unserializeJSON(conf)
