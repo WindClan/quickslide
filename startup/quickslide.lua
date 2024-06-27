@@ -1,4 +1,4 @@
-local remote = "https://raw.githubusercontent.com/throughthefog/quickslide-ads/main/"
+local remote = "https://raw.githubusercontent.com/windclan/quickslide-ads/main/"
 
 require("/libs/qs_utils")
 print_info("Starting QuickSlide")
