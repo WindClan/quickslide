@@ -3,10 +3,6 @@ local remote = "https://raw.githubusercontent.com/windclan/quickslide-ads/main/"
 require("/libs/qs_utils")
 print_info("Starting QuickSlide")
 print_info("Board ID " .. os.getComputerID())
-if fs.exists("/temp") then
-	fs.delete("/temp")
-end
-fs.makeDir("/temp")
 -- Sandbox
 _G.qs_env = {
 	term = {
